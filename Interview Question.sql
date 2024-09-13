@@ -1,0 +1,312 @@
+--- Basic Question ---
+
+-- 1. Retrieve the MerchantName and Amount for all transactions.
+-- 2. Filter the data to show only transactions where the Amount is greater than 100.
+-- 3. Find all transactions that occurred on 2024-07-09.
+-- 4. Calculate the total Amount for each MerchantName in the table.
+-- 5. Find the average Amount for transactions grouped by Gateway.
+-- 6. Retrieve the MerchantEmail and Amount for transactions where the Status is null.
+-- 7. Find the maximum Amount transacted by each MerchantName where the Commission is zero.
+-- 8. Find the distinct MerchantID and their total transaction Amount where the UPI field is not empty.
+-- 9. Get all transactions that involved the Gateway "timepay" and sort them by DateTime.
+-- 10. Retrieve the MerchantName, Amount, and ExtTransactionID for all transactions, ensuring that the ExtTransactionID is unique.
+-- 11. Write a query to find the total Commission collected for each MerchantEmail.
+-- 12. Find all transactions where the Status is not null and the Amount is greater than 500.
+-- 13. Retrieve the distinct MerchantID and count the number of transactions for each.
+-- 14. Identify transactions that do not have an associated BankUTR.
+-- 15. Find the first transaction (by DateTime) for each MerchantName.
+-- 16. Retrieve the MerchantName and the highest Amount for each Gateway.
+-- 17. Calculate the total Amount and the average Commission for transactions grouped by VPA.
+-- 18. Find all transactions where the ExtTransactionID starts with "PEBLITZ".
+-- 19. Retrieve the SID and the corresponding MerchantName for transactions where the Amount is the highest for each MerchantEmail.
+-- 20. Identify transactions that occurred after 12:00 PM on 2024-07-09.
+-- 21. Get the total Amount and count of transactions for each unique MerchantEmail.
+-- 22. List all distinct VPA values in the table.
+-- 23. Retrieve all transactions with a Commission greater than 0 but less than 10.
+-- 24. Find transactions where the DateTime is between '2024-07-01' and '2024-07-10'.
+-- 25. List all MerchantNames where the Amount is less than 50.
+-- 26. Find the average Amount for transactions grouped by MerchantID.
+-- 27. Retrieve all transactions where the MerchantEmail ends with "gmail.com".
+-- 28. Get all transactions where the Amount is exactly 200.
+-- 29. Retrieve all unique MerchantIDs where the Amount is greater than the average Amount.
+-- 30. List all transactions with a BankUTR value that starts with "Y".
+-- 31. Calculate the total Amount for transactions grouped by Commission.
+-- 32. Retrieve all transactions where the SID is not NULL.
+-- 33. Find all transactions where the Amount is between 100 and 500.
+-- 34. List the distinct values in the Gateway column.
+-- 35. Find all transactions where the MerchantName contains the word "Tech".
+-- 36. Retrieve all transactions where the DateTime is in August 2024.
+-- 37. Get all transactions with a null MerchantEmail.
+-- 38. Find the average Commission for transactions where the Amount is greater than 1000.
+-- 39. Retrieve all transactions with an Amount of less than the median Amount.
+-- 40. List all transactions where the Amount is equal to the maximum Amount in the table.
+-- 41. Find the total Amount for transactions with a Status of 'Completed'.
+-- 42. Retrieve transactions where the Commission is the highest for each MerchantName.
+-- 43. Get all transactions where the DateTime is on a weekend.
+-- 44. Find all distinct MerchantNames with at least 3 transactions.
+-- 45. List all transactions where the UPI field is empty.
+-- 46. Retrieve the top 10 highest transaction amounts.
+-- 47. Find all transactions where the Amount is divisible by 10.
+-- 48. Get all transactions where the Amount is less than the average Amount of the table.
+-- 49. Retrieve all transactions where the MerchantID is not in a given list.
+-- 50. Find all transactions where the ExtTransactionID contains the substring "TXN".
+-- 51. Retrieve the total Amount for transactions by month for 2024.
+-- 52. List all transactions where the Amount is greater than the Amount of the previous transaction.
+-- 53. Get all transactions where the VPA contains the substring "pay".
+-- 54. Find all transactions where the MerchantName is one of the top 5 most frequent.
+-- 55. Retrieve all transactions with a Commission that is either NULL or greater than 5.
+-- 56. Find transactions where the Amount is less than the Amount of the highest transaction in a specific Gateway.
+-- 57. Retrieve all transactions with a DateTime in the first quarter of 2024.
+-- 58. List all MerchantNames that have never had a transaction with Amount over 1000.
+-- 59. Find all transactions where the Amount is within the interquartile range.
+-- 60. Retrieve transactions where the Commission is exactly 0 or greater than 10.
+-- 61. Get all transactions where the Status is 'Pending' and the Amount is between 50 and 150.
+-- 62. Retrieve all transactions where the MerchantEmail starts with "info@".
+-- 63. Find all transactions where the Amount is greater than the Amount of the last transaction.
+-- 64. List all distinct MerchantIDs that have transactions in the last 30 days.
+-- 65. Retrieve all transactions where the DateTime is before '2024-06-01'.
+-- 66. Find all transactions where the Commission is the same as the average Commission.
+-- 67. Retrieve all transactions where the Gateway is not 'timepay'.
+-- 68. List all transactions where the MerchantName starts with the letter 'A'.
+-- 69. Get the total Amount and average Commission for transactions grouped by Status.
+-- 70. Find all transactions with a DateTime between two specific hours of the day.
+-- 71. Retrieve transactions where the Amount is greater than the median of the last month's transactions.
+-- 72. List all MerchantNames where the Amount is greater than 500 and less than 1000.
+-- 73. Find all transactions where the Amount is the same as the Amount of the previous day's transactions.
+-- 74. Retrieve all transactions with a non-NULL UPI value and a Commission of 0.
+-- 75. Get all transactions where the MerchantEmail is in a specific domain list.
+-- 76. List transactions where the DateTime is in the last 7 days.
+-- 77. Retrieve transactions where the Amount is greater than the total Amount of a specific MerchantID.
+-- 78. Find all transactions where the Commission is greater than the median Commission.
+-- 79. Get the total Amount for transactions grouped by the first character of MerchantName.
+-- 80. Retrieve transactions with an Amount less than the Amount of the most recent transaction.
+-- 81. List all transactions where the DateTime is between '2024-05-01' and '2024-07-01'.
+-- 82. Find transactions where the MerchantName contains the word "Global".
+-- 83. Retrieve all transactions with a Commission that is a multiple of 5.
+-- 84. List all transactions where the MerchantID is repeated more than twice.
+-- 85. Find transactions with an Amount equal to the average Amount of the last 3 months.
+-- 86. Retrieve all transactions where the Gateway is either 'timepay' or 'paynow'.
+-- 87. List transactions where the Amount is greater than the highest Amount in a specific MerchantName.
+-- 88. Find all transactions with a Commission value between 1 and 5.
+-- 89. Retrieve transactions where the DateTime is on the last day of the month.
+-- 90. Get all transactions where the MerchantEmail contains "support".
+-- 91. Find all transactions where the Amount is less than the average Amount of transactions for each Gateway.
+-- 92. Retrieve transactions with a Commission of exactly 10 or more.
+-- 93. List all transactions where the MerchantName ends with "Tech".
+-- 94. Get all transactions where the DateTime is between two specific months of the year.
+-- 95. Retrieve transactions where the Amount is in the top 20% of all transactions.
+-- 96. Find transactions where the Status is 'Failed' and the Amount is greater than 100.
+-- 97. Retrieve all transactions where the ExtTransactionID does not contain "PAY".
+-- 98. List all transactions where the Commission is the same for all transactions of a given MerchantID.
+-- 99. Find all transactions where the DateTime is within the last hour.
+-- 100. Retrieve all transactions where the Amount is greater than 200 but less than 800.
+
+
+--- Intermediate Question ---
+
+
+-- 1. Calculate the total Amount for each MerchantName and sort them by the total Amount in descending order.
+-- 2. Find the maximum Amount for each Gateway and retrieve the corresponding MerchantName.
+-- 3. Get the average Amount and total Commission for transactions grouped by MerchantID.
+-- 4. Retrieve transactions where the DateTime is in the last 90 days and sort by Amount.
+-- 5. Find all transactions where the Commission is higher than the average Commission for that MerchantName.
+-- 6. Retrieve the top 5 MerchantNames with the highest total Amount.
+-- 7. List all transactions where the Amount is within the 25th to 75th percentile range.
+-- 8. Get all transactions where the DateTime is within the last 30 days and the Amount is greater than the median Amount.
+-- 9. Find all unique MerchantIDs where the Amount is above the 90th percentile of all transaction amounts.
+-- 10. Retrieve the total Amount and count of transactions for each Gateway, ordered by total Amount.
+-- 11. List all transactions where the Amount is higher than the average Amount for transactions within the same month.
+-- 12. Find the total Amount and average Commission for each MerchantEmail where the Commission is not NULL.
+-- 13. Retrieve the MerchantName and Amount for transactions where the Amount is in the top 10% of all transactions.
+-- 14. Find the distinct MerchantEmails where the total Amount for transactions is more than the average Amount for all emails.
+-- 15. Get all transactions where the Commission is the highest for each MerchantName.
+-- 16. List all transactions where the Amount is within the range of the highest and lowest Amounts for each MerchantID.
+-- 17. Retrieve all transactions where the Amount is higher than the median Amount for that specific Gateway.
+-- 18. Find the total Amount and average Commission for transactions where the Status is 'Completed' and the Amount is above 200.
+-- 19. Get all transactions where the MerchantEmail starts with 'sales' and the Amount is greater than 150.
+-- 20. Retrieve the MerchantID and the total Amount for transactions grouped by Status, where Status is not NULL.
+-- 21. Find the MerchantName with the highest total Amount for transactions where the Commission is less than 5.
+-- 22. Retrieve all transactions where the DateTime is in the second quarter of 2024 and the Amount is greater than the average Amount.
+-- 23. List all transactions where the Amount is in the 90th percentile range for each MerchantID.
+-- 24. Find all transactions where the Commission is between the 25th and 75th percentile of all Commission values.
+-- 25. Retrieve transactions with the top 3 highest Amounts for each MerchantName.
+-- 26. Get all transactions where the Amount is above the average Amount for the last 6 months.
+-- 27. Find the total Amount and count of transactions for each MerchantID, where Amount is above the median Amount.
+-- 28. List all transactions where the DateTime is between two specific dates and the Amount is within the top 20% of all amounts.
+-- 29. Retrieve all transactions where the Amount is higher than the average Amount for transactions with the same Gateway.
+-- 30. Find the distinct MerchantNames where the total Amount is higher than the average Amount of all MerchantNames.
+-- 31. Get the total Amount and average Commission for transactions where the Amount is in the top 5% of all transactions.
+-- 32. Retrieve all transactions where the MerchantName contains the word "Solution" and the Amount is greater than the average Amount.
+-- 33. Find the highest and lowest Commission for each MerchantID and calculate the difference.
+-- 34. List all transactions where the Amount is within the interquartile range of Amounts for each MerchantID.
+-- 35. Get the MerchantName with the lowest average Amount for transactions with a Commission of 0.
+-- 36. Retrieve the total Amount and count of transactions for each MerchantEmail where the Status is 'Failed'.
+-- 37. Find all transactions where the DateTime is within the first and last hour of the day.
+-- 38. List all distinct MerchantIDs that have transactions with an Amount in the top 10% of their transactions.
+-- 39. Retrieve all transactions where the Amount is greater than the average Amount for each specific MerchantEmail.
+-- 40. Find the total Amount and average Commission for transactions grouped by UPI.
+-- 41. Get all transactions where the Amount is less than the 25th percentile of all transaction Amounts.
+-- 42. Retrieve all transactions with an Amount higher than the average Amount for each Gateway.
+-- 43. Find all transactions where the Commission is within the top 10% of all Commission values.
+-- 44. List all transactions where the DateTime is in the last year and the Amount is above the median Amount.
+-- 45. Retrieve all MerchantNames where the Amount is consistently above the average Amount across all transactions.
+-- 46. Find all transactions with a Status of 'Pending' where the Amount is above the 90th percentile of all transactions.
+-- 47. Get the total Amount and average Commission for transactions grouped by Gateway, where the Amount is in the top 20%.
+-- 48. Retrieve all transactions where the Amount is above the highest Amount for a specific MerchantID.
+-- 49. List all transactions with a Commission value that is a multiple of 10.
+-- 50. Find the total Amount for transactions where the DateTime is in the last quarter of 2024 and the Commission is not NULL.
+-- 51. Retrieve transactions where the Amount is higher than the average Amount for the same Gateway.
+-- 52. Get all transactions where the MerchantID is repeated more than 3 times and the Amount is above 100.
+-- 53. List all transactions where the DateTime is in the last 14 days and the Amount is greater than 300.
+-- 54. Retrieve all transactions where the Amount is within the top 25% for each Gateway.
+-- 55. Find all transactions where the MerchantName contains "Global" and the Amount is greater than the median Amount.
+-- 56. Get the total Amount and average Commission for transactions where the Status is 'Completed' and Amount is above the median.
+-- 57. Retrieve all transactions where the Commission is within the 75th percentile of all Commission values.
+-- 58. List all transactions where the DateTime is between two specific times on the same day.
+-- 59. Find all transactions with a BankUTR that contains a specific substring.
+-- 60. Get the total Amount and count of transactions for each MerchantID where the Status is 'Successful'.
+-- 61. Retrieve all transactions where the Amount is greater than the highest Amount in the last month.
+-- 62. List all transactions where the Amount is in the 50th to 75th percentile range for each MerchantEmail.
+-- 63. Find all transactions where the Commission is exactly equal to the average Commission for that MerchantName.
+-- 64. Retrieve all transactions where the MerchantEmail starts with "support@" and the Amount is greater than 100.
+-- 65. Get the total Amount and average Commission for transactions where the Amount is in the top 25% of all transactions.
+-- 66. List all transactions where the DateTime is within the first quarter of 2024 and the Amount is higher than the median.
+-- 67. Retrieve all transactions where the MerchantName contains "Services" and the Amount is above the average Amount.
+-- 68. Find the distinct MerchantEmails with a total Amount higher than the average for all MerchantEmails.
+-- 69. List all transactions where the Amount is in the top 10% and the Commission is not NULL.
+-- 70. Retrieve all transactions with a BankUTR that starts with 'Y' and the Amount is above 200.
+-- 71. Get the total Amount and average Commission for transactions where the Status is 'Pending' and Amount is below 100.
+-- 72. List all transactions where the DateTime is in the second half of 2024 and the Amount is above the median.
+-- 73. Retrieve all transactions where the MerchantID is not in a specific list and the Amount is above 150.
+-- 74. Find all transactions with a Commission that is greater than the average Commission for each Gateway.
+-- 75. Get the total Amount for transactions grouped by MerchantName where the Amount is in the top 20%.
+-- 76. Retrieve all transactions where the Commission is between 5 and 15.
+-- 77. Find all transactions where the Amount is less than the lowest Amount for a specific MerchantID.
+-- 78. List all transactions with a DateTime that falls on a weekend and the Amount is above the average.
+-- 79. Get all transactions where the Amount is within the top 10% for the last 6 months.
+-- 80. Retrieve all transactions where the Amount is above the average Amount for a specific MerchantName.
+-- 81. Find all transactions where the DateTime is within the first and last hour of each day.
+-- 82. List all transactions with a Commission that is less than the median Commission for all transactions.
+-- 83. Retrieve all transactions where the Amount is in the top 5% for each MerchantEmail.
+-- 84. Find all transactions where the Amount is higher than the median Amount for the last 30 days.
+-- 85. Get the total Amount and count of transactions for each Gateway where the Amount is in the top 25%.
+-- 86. Retrieve transactions where the Amount is below the 25th percentile for the last quarter.
+-- 87. Find all transactions where the MerchantName starts with the letter 'G' and the Amount is above 200.
+-- 88. List all transactions where the DateTime is in the last month and the Amount is higher than the average Amount.
+-- 89. Retrieve all transactions where the Commission is in the 75th percentile range of all Commission values.
+-- 90. Find all transactions where the Amount is higher than the total Amount of the previous month's transactions.
+-- 91. Get all transactions where the MerchantID is repeated more than twice and the Amount is greater than 50.
+-- 92. Retrieve all transactions where the Amount is within the 90th percentile range for each MerchantID.
+-- 93. Find all transactions with a Commission value in the top 5% for each MerchantName.
+-- 94. List all transactions where the Amount is in the bottom 25% of all transactions.
+-- 95. Retrieve all transactions where the DateTime is within the last 30 days and the Amount is greater than the average Amount.
+-- 96. Find all transactions where the Amount is higher than the average Amount for a specific Gateway and MerchantName.
+-- 97. Get the total Amount and count of transactions for each Gateway where the Commission is above the median Commission.
+-- 98. Retrieve all transactions where the Amount is less than the highest Amount for a specific MerchantEmail.
+-- 99. List all transactions where the DateTime falls on a weekday and the Amount is above the median.
+-- 100. Find all transactions where the Commission is in the bottom 25% of all Commission values.
+
+
+--- Advanced Question ---
+
+
+-- 1. Calculate the total Amount and average Commission for each MerchantID, grouping by the year and month of the DateTime.
+-- 2. Retrieve the total Amount for each MerchantEmail, segmented by Gateway, and then sort the results by total Amount.
+-- 3. Find the MerchantNames with the highest average Amount for transactions where the Commission is above the median Commission.
+-- 4. List all transactions where the Amount is above the 95th percentile of all transactions, along with the corresponding MerchantNames.
+-- 5. Get the total Amount for transactions grouped by MerchantID, where the Amount is higher than the average Amount for that MerchantID over the last year.
+-- 6. Retrieve all transactions where the DateTime falls within the last 90 days, the Amount is above the average Amount, and the Status is not 'Failed'.
+-- 7. Find the MerchantEmail with the highest total Amount for transactions where the Commission is in the top 5% of all Commission values.
+-- 8. List all transactions where the DateTime is within a specified date range and the Amount is in the top 10% of all transactions for each MerchantID.
+-- 9. Retrieve the MerchantName, Amount, and DateTime for transactions where the Amount is greater than the average Amount for that MerchantName and the Commission is not NULL.
+-- 10. Find all transactions where the Amount is above the median Amount for each specific Gateway and the DateTime is within the last 6 months.
+-- 11. Calculate the total Amount and average Commission for transactions where the DateTime is in the last quarter and group by MerchantID and Status.
+-- 12. Retrieve all transactions where the Commission is higher than the average Commission for the last 3 months, grouped by MerchantEmail.
+-- 13. List all transactions with the top 1% of amounts and their corresponding MerchantNames and Gateway, and sort by Amount in descending order.
+-- 14. Find all transactions where the DateTime is within the last year, the Amount is in the top 20% of all transactions, and the Status is 'Completed'.
+-- 15. Retrieve the total Amount and average Commission for each Gateway, with an Amount greater than the 75th percentile of all amounts in the last 6 months.
+-- 16. Get all transactions where the MerchantName contains "Tech" and the Amount is above the 90th percentile for that MerchantName.
+-- 17. List all transactions where the Amount is within the interquartile range for each MerchantID and the DateTime is within the last 90 days.
+-- 18. Retrieve transactions where the DateTime is in the last 30 days and the Amount is greater than the average Amount of transactions for each MerchantEmail.
+-- 19. Find the total Amount for transactions where the Commission is in the top 10% and the Amount is in the bottom 10% for each MerchantID.
+-- 20. List all transactions where the DateTime is in the last year and the Amount is above the median Amount for transactions with the same MerchantEmail.
+-- 21. Calculate the total Amount and average Commission for each Gateway where the Amount is in the top 25% and the DateTime is within the last quarter.
+-- 22. Retrieve all transactions where the Amount is greater than the average Amount for each MerchantID and the Commission is above 0.
+-- 23. Find the top 3 MerchantNames with the highest average Amount for transactions where the DateTime is in the last 90 days.
+-- 24. Get all transactions where the DateTime is within the first and last hour of each day for the past month, and the Amount is in the top 10%.
+-- 25. List all transactions where the Commission is in the bottom 25% and the Amount is above the median for each MerchantEmail.
+-- 26. Retrieve the MerchantName and Amount for transactions where the Amount is in the top 5% and the DateTime is in the last 6 months.
+-- 27. Find all transactions where the Amount is within the 90th percentile of the Amounts for each Gateway and the Status is 'Completed'.
+-- 28. Calculate the total Amount for each MerchantID and Status where the DateTime is in the last 12 months, and sort by total Amount.
+-- 29. List all transactions where the Amount is above the median Amount for each MerchantID and the DateTime is within the last 30 days.
+-- 30. Retrieve all transactions where the Commission is higher than the average Commission for transactions with the same Gateway and the Amount is in the top 20%.
+-- 31. Find the MerchantEmail with the highest total Amount for transactions where the DateTime is within the last year and the Commission is not NULL.
+-- 32. Get all transactions where the DateTime is within the last 90 days, the Amount is above the average Amount for that period, and the Status is 'Pending'.
+-- 33. Retrieve the MerchantName and the top 10 highest Amounts for each MerchantID where the DateTime is within the last 6 months.
+-- 34. List all transactions where the Amount is within the top 1% of all Amounts and the DateTime is in the last quarter of the year.
+-- 35. Find all transactions where the DateTime is in the last 30 days, the Amount is above the average Amount for that period, and the Commission is above 10.
+-- 36. Retrieve the total Amount and average Commission for transactions where the Amount is in the top 10% for each MerchantEmail.
+-- 37. List all transactions where the DateTime is within the last year and the Amount is above the 90th percentile for each MerchantName.
+-- 38. Get all transactions where the Amount is above the median Amount for each Gateway and the Commission is in the bottom 25%.
+-- 39. Retrieve all transactions with the top 5 highest Amounts for each MerchantID where the DateTime is within the last 30 days.
+-- 40. Find all transactions where the DateTime is within the last quarter, the Amount is in the top 20% for that period, and the Commission is above 5.
+-- 41. List all transactions where the Amount is within the 75th percentile for the last 90 days and the Status is 'Successful'.
+-- 42. Retrieve all transactions where the Amount is in the top 10% and the Commission is below the median Commission.
+-- 43. Find the total Amount and average Commission for each MerchantID where the Amount is in the top 5% and the DateTime is within the last year.
+-- 44. List all transactions with a Commission in the bottom 10% and the Amount is above the median for each MerchantEmail.
+-- 45. Retrieve the MerchantName and Amount for transactions where the Amount is in the top 5% and the DateTime is in the last 3 months.
+-- 46. Find all transactions where the Amount is within the interquartile range for each MerchantID and the Commission is above 0.
+-- 47. Get the total Amount and average Commission for transactions where the DateTime is within the last 6 months and the Amount is in the top 20%.
+-- 48. List all transactions where the Amount is above the 90th percentile for the last year and the DateTime is within the last 30 days.
+-- 49. Retrieve all transactions where the Commission is within the top 5% and the Amount is below the median for each MerchantName.
+-- 50. Find the MerchantEmail with the highest total Amount for transactions where the DateTime is in the last quarter and the Amount is above 200.
+-- 51. List all transactions where the Amount is above the average Amount for each MerchantID, and the DateTime is within the last 6 months.
+-- 52. Retrieve all transactions where the DateTime is within the last year, the Amount is in the top 25%, and the Commission is above 5.
+-- 53. Find all transactions where the Amount is within the top 10% and the Commission is in the bottom 25% for each Gateway.
+-- 54. Get the total Amount and average Commission for transactions where the DateTime is within the last 90 days and the Amount is in the top 20%.
+-- 55. List all transactions where the DateTime is within the last 3 months and the Amount is above the median for each MerchantEmail.
+-- 56. Retrieve all transactions where the Amount is in the top 5% and the Commission is above the average for that period.
+-- 57. Find all transactions where the DateTime is within the last 6 months and the Amount is above the average Amount for that period.
+-- 58. Get the total Amount and average Commission for transactions grouped by the year and month where the Amount is in the top 10%.
+-- 59. Retrieve all transactions where the Amount is above the median for each Gateway and the DateTime is within the last 90 days.
+-- 60. List all transactions where the Commission is in the top 10% and the Amount is above the median for each MerchantID.
+-- 61. Find all transactions where the Amount is within the top 1% and the DateTime is within the last 6 months.
+-- 62. Get all transactions where the Amount is in the top 10% and the Commission is below the median for each MerchantEmail.
+-- 63. Retrieve the total Amount and average Commission for transactions where the DateTime is within the last year and the Amount is above the average.
+-- 64. List all transactions where the Amount is above the top 5% and the Commission is within the 25th to 50th percentile range.
+-- 65. Find the total Amount for transactions where the DateTime is within the last quarter and the Commission is above 10.
+-- 66. Retrieve all transactions where the Amount is in the top 20% for each MerchantName and the DateTime is within the last 90 days.
+-- 67. Get the total Amount and average Commission for transactions where the Commission is within the top 25% and the Amount is above the median.
+-- 68. List all transactions where the Amount is within the top 5% and the DateTime is within the last year.
+-- 69. Find all transactions where the DateTime is in the last month, the Amount is above the average Amount for that period, and the Commission is above 5.
+-- 70. Retrieve all transactions where the Amount is above the median for the last 90 days and the Commission is within the bottom 25%.
+-- 71. Get the total Amount and average Commission for each MerchantID where the Amount is in the top 10% and the DateTime is within the last year.
+-- 72. List all transactions where the Commission is above the median and the Amount is in the bottom 10% for each MerchantEmail.
+-- 73. Find all transactions where the DateTime is within the last 3 months and the Amount is above the 90th percentile for that period.
+-- 74. Retrieve the MerchantName and Amount for transactions where the Amount is in the top 5% and the DateTime is within the last 6 months.
+-- 75. Get the total Amount and average Commission for transactions where the Amount is above the average Amount for each Gateway and MerchantName.
+-- 76. List all transactions where the Amount is in the top 20% and the DateTime is within the last year.
+-- 77. Retrieve all transactions where the DateTime is within the last quarter and the Amount is above the median Amount for that period.
+-- 78. Find all transactions where the Commission is within the top 10% and the Amount is above the median for each MerchantID.
+-- 79. Get the total Amount and average Commission for transactions where the DateTime is within the last 90 days and the Amount is in the top 10%.
+-- 80. List all transactions where the Amount is within the top 1% and the Commission is above the median for that period.
+-- 81. Retrieve all transactions where the Amount is above the 90th percentile and the DateTime is within the last 6 months.
+-- 82. Find all transactions where the DateTime is within the last month and the Amount is above the average Amount for that period.
+-- 83. Get the total Amount and average Commission for each MerchantID where the Amount is in the top 10% and the Commission is above the median.
+-- 84. Retrieve all transactions where the Amount is above the median for each MerchantName and the DateTime is within the last year.
+-- 85. List all transactions where the DateTime is within the last 30 days and the Amount is above the average Amount for that period.
+-- 86. Find all transactions where the Amount is in the top 5% and the Commission is within the 25th to 50th percentile range for each Gateway.
+-- 87. Retrieve all transactions where the DateTime is within the last quarter and the Amount is above the median for each MerchantEmail.
+-- 88. Get the total Amount and average Commission for transactions where the Amount is above the 75th percentile for each MerchantID.
+-- 89. List all transactions where the Amount is above the top 10% and the DateTime is within the last 3 months.
+-- 90. Find all transactions with a Commission in the bottom 25% and the Amount is above the average for each MerchantEmail.
+-- 91. Retrieve all transactions where the DateTime is within the last year and the Amount is in the top 25% for that period.
+-- 92. Get the total Amount and average Commission for transactions where the DateTime is within the last 6 months and the Amount is above the median.
+-- 93. List all transactions where the Amount is in the top 1% and the DateTime is within the last quarter.
+-- 94. Find all transactions where the Amount is above the average Amount for each MerchantID and the DateTime is within the last 30 days.
+-- 95. Retrieve all transactions where the Amount is in the top 10% and the Commission is above the average for each MerchantName.
+-- 96. Get the total Amount and average Commission for transactions where the DateTime is within the last 90 days and the Amount is in the top 25%.
+-- 97. List all transactions where the Amount is above the 90th percentile and the Commission is within the bottom 25%.
+-- 98. Find all transactions where the DateTime is within the last year and the Amount is in the top 5% for each MerchantID.
+-- 99. Retrieve all transactions where the Amount is above the median for each MerchantEmail and the DateTime is within the last 6 months.
+-- 100. Get the total Amount and average Commission for transactions where the Amount is in the top 10% and the DateTime is within the last 90 days.
